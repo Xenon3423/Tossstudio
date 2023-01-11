@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html id="#about" lang="en">
+
+<!-- Java плагин jquery подключение -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Добавить плавную прокрутку до всех ссылок
+  $("a").on('click', function(event) {
+
+    // Убедись в этом что .hash имеет значение перед переопределением поведения по умолчанию
+    if (this.hash !== "") {
+      // Запретить поведение щелчка якоря по умолчанию
+      event.preventDefault();
+
+      // Хранить хэш
+      var hash = this.hash;
+
+      // Использование метода animate() jQuery для добавления плавной прокрутки страницы
+      // Необязательное число (200) указывает количество миллисекунд, необходимых для прокрутки до указанной области
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+
+        // Добавить хэш (#) для URL-адреса после завершения прокрутки (поведение щелчка по умолчанию)
+        window.location.hash = hash;
+      });
+    } // Конец, если
+  });
+});
+</script>   
+<!-- Конец скрипта Java -->
+    
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Подключаем шрифт -->
+    <title>TOSS</title>
+    <script src="https://kit.fontawesome.com/bf8558060b.js" crossorigin="anonymous"></script>
+    
+       
+</head>
+
+    
+<body>
+    <div class="page">
+    
+<header class="header">
+    <div class=".container">
+        <div class="header_inner">
+            <a class="header_logo" href="#home">TS</a>
+            
+            <nav class="nav">
+                <a class="nav_link" href="#home">Home</a>
+                <a class="nav_link" href="projects.html" target="_self">Our Projects</a>
+                <a class="nav_link" href="blog.html" target="_self">Blog</a>
+                <a class="nav_link" href="https://discord.gg/gTfWK9ar5t"><i class="fa-brands fa-discord"></i></a>
+            </nav>       
+        </div>
+    </div>   
+</header>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+        </style>
+
+    
+<div class="intro">
+    <div class="container">
+        <div class=".intro_inner"></div>
+        <h1 class="intro_title">Welcome to TOSS STUDIO</h1> 
+        <p class="center">
+            <a class="btn" href='#about'>Learn More</a></p>
+        </div>
+    </div>
+    
+
+<section class="section" id="about">
+    <div class=".container1"> 
+        
+        <div class="section_header">
+            <h2 class="section_title">About us</h2>
+            <div class="section_text">
+                <p>Hi! We are a indie studio from <b>Krasnodar (Russia)</b>, which develops video games. 
+The studio was founded in 2021 by a man named Nick Logman, who is currently the main developer and CEO of our studio.</p>
+
+<p>We hope that our projects will be of interest to you. You can get acquainted with them in the corresponding section. Good luck!</p> 
+            </div>
+        </div>    
+    
+        
+        <img src="assets/images/photo1.jpg" alt="фото1" class="center">  
+    
+    
+    </div>  
+    
+</section>
+
+         <footer class="footer">
+    <h3 class="footer_text"></h3>
+    <h3>TOSS STUDIO ©. All rights reserved.</h3>
+    <p></p>
+    <p>Contact us: <b>kukispuki1209@gmail.com</b></p>
+    <p></p>    
+        
+        
+    </footer>    
+ 
+</div>
+</body>
+</html>
